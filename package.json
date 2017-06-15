@@ -1,0 +1,25 @@
+{
+  "name": "uploadcare-gif2video",
+  "version": "0.0.1",
+  "description": "Convert img with GIF to video.",
+  "main": "index.js",
+  "scripts": {
+    "lint:md": "markdownlint README.md",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uploadcare/uploadcare-gif2video.git"
+  },
+  "author": "Zarema Khalilova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uploadcare/uploadcare-gif2video/issues"
+  },
+  "homepage": "https://github.com/uploadcare/uploadcare-gif2video#readme",
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-uploadcare": "^1.1.0",
+    "markdownlint-cli": "^0.3.1"
+  }
+}
