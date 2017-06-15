@@ -1,15 +1,30 @@
 {
   "name": "uploadcare-gif2video",
+  "config": {
+    "name": "uploadcare-gif2video",
+    "library": "gif2video"
+  },
   "version": "0.0.1",
   "description": "Convert img with GIF to video.",
-  "main": "index.js",
+  "main": "dist/uploadcare-gif2video.min.js",
+  "module": "index.js",
   "files": [
+    "dist",
     "src",
     "index.js"
   ],
   "scripts": {
+    "clean": "rimraf dist",
+    "build:dist": "rollup -c ./scripts/rollup.config.js",
+    "build:dist:min": "rollup -c ./scripts/rollup.config.js --environment BUILD:production",
+    "build": "npm run build:dist && npm run build:dist:min",
     "lint:md": "markdownlint README.md",
-    "test": "jest"
+    "lint:js": "eslint .",
+    "check": "npm run lint:md && npm run lint:js",
+    "test": "jest",
+    "preversion": "npm run clean && npm run check",
+    "version": "npm run build",
+    "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,6 +42,11 @@
     "eslint": "^4.0.0",
     "eslint-config-uploadcare": "^1.1.0",
     "jest": "^20.0.4",
-    "markdownlint-cli": "^0.3.1"
+    "markdownlint-cli": "^0.3.1",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.43.0",
+    "rollup-plugin-babili": "^3.1.0",
+    "rollup-plugin-filesize": "^1.3.2",
+    "rollup-plugin-license": "^0.4.0"
   }
 }
