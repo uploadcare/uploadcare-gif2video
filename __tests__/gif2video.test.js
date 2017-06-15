@@ -1,3 +1,4 @@
+/* eslint max-nested-callbacks: ["error", 3] */
 import {ERROR_NO_PARAM, ERROR_NO_SRC, ERROR_SRC_NOT_STRING, ERROR_SRC_NOT_CDN} from '../src/error-messages'
 import {gif2video} from '../src/gif2video'
 
@@ -12,19 +13,19 @@ describe('gif2video', () => {
 
 describe('gif2video throw error if', () => {
   test('no param', () => {
-    expect(() => {gif2video()}).toThrow(ERROR_NO_PARAM)
+    expect(() => gif2video()).toThrow(ERROR_NO_PARAM)
   })
 
   test('param doesn\'t contain src', () => {
-    expect(() => {gif2video({})}).toThrow(ERROR_NO_SRC)
+    expect(() => gif2video({})).toThrow(ERROR_NO_SRC)
   })
 
   test('src is not a string', () => {
-    expect(() => {gif2video({src: {}})}).toThrow(ERROR_SRC_NOT_STRING)
+    expect(() => gif2video({src: {}})).toThrow(ERROR_SRC_NOT_STRING)
   })
 
   test('src is not start from ucarecdn', () => {
-    expect(() => {gif2video({src: 'https://placekitten.com/200/300'})}).toThrow(ERROR_SRC_NOT_CDN)
+    expect(() => gif2video({src: 'https://placekitten.com/200/300'})).toThrow(ERROR_SRC_NOT_CDN)
   })
 })
 
