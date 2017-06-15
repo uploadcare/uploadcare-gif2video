@@ -30,11 +30,14 @@ export function gif2video(gif) {
   check(gif)
 
   const {src} = gif
+  const splitSrc = src.match(/^(http|https):\/\/ucarecdn\.com\/(.+?)\/(.+?)\.gif/)
+  const UUID = splitSrc[2]
+  const filename = splitSrc[3]
 
   let sources = SUPPORTED_FORMATS.map(format => ({
     tagName: 'source',
     attributes: {
-      src: `${src}gif2video/-/format/${format}/`,
+      src: `https://ucarecdn.com/${UUID}/gif2video/-/format/${format}/${filename}.gif`,
       type: `video/${format}`,
     },
   }))
