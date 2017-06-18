@@ -21,7 +21,7 @@ function check(gif) {
 /**
  * Transform git object to video tag AST
  * @param gif
- * @returns {{tagName: string, attributes: Object, sources: Array}}
+ * @returns {{tagName: string, attributes: Object, children: Array}}
  */
 export function gif2video(gif) {
   if (!gif) {
@@ -34,7 +34,7 @@ export function gif2video(gif) {
   const UUID = splitSrc[2]
   const filename = splitSrc[3]
 
-  let sources = SUPPORTED_FORMATS.map(format => ({
+  let children = SUPPORTED_FORMATS.map(format => ({
     tagName: 'source',
     attributes: {
       src: `https://ucarecdn.com/${UUID}/gif2video/-/format/${format}/${filename}.gif`,
@@ -51,6 +51,6 @@ export function gif2video(gif) {
       'webkit-playsinline': true,
       'playsinline': true,
     },
-    sources,
+    children,
   }
 }

@@ -28,7 +28,7 @@ video = {
     'webkit-playsinline': true,
     'playsinline': true,
   },
-  sources: [
+  children: [
     {
       tagName: 'source',
       attributes: {
