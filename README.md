@@ -22,25 +22,25 @@ const video = gif2video({src: 'https://ucarecdn.com/af0136cc-c60a-49a3-a10f-f931
 video = {
   tagName: 'video',
   attributes: {
-    autoplay: true,
-    loop: true,
-    muted: true,
+    'autoplay': true,
+    'loop': true,
+    'muted': true,
     'webkit-playsinline': true,
-    playsinline: true,
+    'playsinline': true,
   },
   sources: [
     {
       tagName: 'source',
       attributes: {
-        src: `https://ucarecdn.com/af0136cc-c60a-49a3-a10f-f9319f0ce7e1/gif2video/-/format/webm/`,
-        type: `video/webm`
+        src: 'https://ucarecdn.com/af0136cc-c60a-49a3-a10f-f9319f0ce7e1/gif2video/-/format/webm/',
+        type: 'video/webm'
       }
     },
     {
       tagName: 'source',
       attributes: {
-        src: `https://ucarecdn.com/af0136cc-c60a-49a3-a10f-f9319f0ce7e1/gif2video/-/format/mp4/`,
-        type: `video/mp4`
+        src: 'https://ucarecdn.com/af0136cc-c60a-49a3-a10f-f9319f0ce7e1/gif2video/-/format/mp4/',
+        type: 'video/mp4'
       }
     },
   ]
