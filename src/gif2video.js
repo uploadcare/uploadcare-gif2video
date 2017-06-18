@@ -21,7 +21,7 @@ function check(gif) {
 /**
  * Transform git object to video tag AST
  * @param gif
- * @returns {{tagName: string, attributes: Object, children: Array}}
+ * @returns {{tagName: string, attributes: Object, children: Array} | null}
  */
 export function gif2video(gif) {
   if (!gif) {
@@ -30,17 +30,14 @@ export function gif2video(gif) {
   check(gif)
 
   const {src} = gif
-  const splitSrc = src.match(/^(http|https):\/\/ucarecdn\.com\/(.+?)\/(.+?)\.gif/)
-  const UUID = splitSrc[2]
-  const filename = splitSrc[3]
+  const splitedSrc = src.match(/^(http|https):\/\/ucarecdn\.com\/(.+?)\/(.+?\.gif|)/)
 
-  let children = SUPPORTED_FORMATS.map(format => ({
-    tagName: 'source',
-    attributes: {
-      src: `https://ucarecdn.com/${UUID}/gif2video/-/format/${format}/${filename}.gif`,
-      type: `video/${format}`,
-    },
-  }))
+  if (splitedSrc === null) {
+    return null
+  }
+
+  const UUID = splitedSrc[2]
+  const filename = splitedSrc[3]
 
   return {
     tagName: 'video',
@@ -51,6 +48,12 @@ export function gif2video(gif) {
       'webkit-playsinline': true,
       'playsinline': true,
     },
-    children,
+    children: SUPPORTED_FORMATS.map(format => ({
+      tagName: 'source',
+      attributes: {
+        src: `https://ucarecdn.com/${UUID}/gif2video/-/format/${format}/${filename}`,
+        type: `video/${format}`,
+      },
+    })),
   }
 }
