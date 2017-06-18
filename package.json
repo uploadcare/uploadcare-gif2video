@@ -4,7 +4,7 @@
     "name": "uploadcare-gif2video",
     "library": "gif2video"
   },
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Convert img with GIF to video.",
   "main": "dist/uploadcare-gif2video.min.js",
   "module": "index.js",
