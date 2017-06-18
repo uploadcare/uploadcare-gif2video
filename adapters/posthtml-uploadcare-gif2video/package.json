@@ -1,0 +1,30 @@
+{
+  "name": "posthtml-uploadcare-gif2video",
+  "version": "0.0.1",
+  "description": "Convert img with GIF to video.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "posthtml",
+    "posthtml-plugin",
+    "uploadcare",
+    "gif",
+    "video"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uploadcare/uploadcare-gif2video.git"
+  },
+  "author": "Zarema Khalilova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uploadcare/uploadcare-gif2video/issues"
+  },
+  "homepage": "https://github.com/uploadcare/uploadcare-gif2video/tree/master/poshtml-uploadcare-gif2video#readme",
+  "dependencies": {
+    "uploadcare-gif2video": "^1.1.0"
+  }
+}
