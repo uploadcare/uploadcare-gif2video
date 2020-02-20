@@ -38,7 +38,7 @@
   "homepage": "https://github.com/uploadcare/uploadcare-gif2video#readme",
   "devDependencies": {
     "babel-preset-env": "^1.5.2",
-    "codecov": "^2.2.0",
+    "codecov": "^3.6.5",
     "eslint": "^4.0.0",
     "eslint-config-uploadcare": "^1.1.0",
     "jest": "^20.0.4",
